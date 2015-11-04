@@ -1,0 +1,56 @@
+<table class="pages">
+	<tr>
+		<th id="clear"></th>
+		<th id="clear"></th>
+		<th id="clear"></th>
+
+		<th id="orangeonwhite"  colspan="4">All Driving</th>
+		<th id="blueonwhite" colspan="4">Night Driving Only</th>
+	</tr>
+	<tr>
+		<th id="clear"></th>
+		<th id="greenonwhite" colspan="2"> Time (am/pm)</th>
+
+		<th id= "whiteonorange">This Trip</th>
+		<th colspan="4" id= "whiteonorange">Total</th>
+		<th id="whiteonblue">This Trip</th>
+		<th colspan="4" id="whiteonblue">Total</th>
+
+		<th id="greenonwhite" colspan="2">Odometer</th>
+
+	</tr>
+	<tr>
+		<th id="whiteonblue">Date</th>
+		<th colspan="2" id="whiteongreen">Start - Finish</th>
+		<th id="smalltextorange"> Total Prev Page</th>
+		<td id="nor"> {{AllTime.hours[tab]}} </td>
+		<th id="smalltextorange"> h</th>
+
+		<td id="nor"> {{AllTime.mins[tab]}} </td>
+		<th id="smalltextorange"> m</th>
+
+
+		<th id="smalltextblue"> Total Prev Page</th>
+		<td id="nor"> {{NightTime.hours[tab]}}</td>
+		<th id="smalltextblue"> h</th>
+		<td id="nor">{{NightTime.mins[tab]}}</td>
+		<th id="smalltextblue"> m</th>
+
+		<th id="whiteongreen">Start</th>
+		<th id="whiteongreen">Finish</th>
+	</tr>
+<!--"h'h' m 'm'"-->
+
+	<tr ng-repeat="entry in LeftPageEntries track by $index" class="entry">
+		<td class="blue">{{entry.date | date}}</td>
+		<td class="green" >{{entry.starttime | date:'h:mm a'}}</td><!-- start trip timestamp -->
+		<td class="green" >{{entry.endtime | date:'h:mm a'}}</td><!-- finish trip timestamp -->
+		<td class="orange" >{{entry.triptime | date: "H'h' m 'm'" : 'UTC'}}</td><!-- travel time mins and hours -->
+		<td class="orange" colspan="4">{{entry.LineTotalhrs}}h {{entry.LineTotalmins}}m</td><!-- travel time total -->
+		<td class="blue">{{entry.nightDriving | date: "H'h' m 'm'" : 'UTC'}}</td><!-- night drving travel time -->
+		<td class="blue" colspan="4">{{entry.NightLineTotalhrs}}h {{entry.NightLineTotalmins}}m</td><!-- night driving time total -->
+		<td class="green">{{entry.odStart}}</td><!-- odometer start -->
+		<td class="green">{{entry.odEnd}}</td><!-- odometer finish -->
+	</tr>
+</table>
+

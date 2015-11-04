@@ -1,0 +1,105 @@
+
+
+
+<!-- Modal -->
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+<form name="mainform" ng-init="init()" ng-class="{submitted:submitted}" ng-submit="mainform.$valid && submitForm()" >
+<div class="modal-dialog">
+  <div class="modal-content">
+    <!-- Modal Header -->
+    <div class="modal-header">
+     <!--  <button type="button" class="close" 
+      data-dismiss="modal">
+      <span aria-hidden="true">&times;</span>
+      <span class="sr-only">Close</span>
+  </button> -->
+  <h4 class="modal-title" id="myModalLabel">
+      <b>Starting details</b><br><p style="font-size: 12pt;">(All fields required)</p>
+  </h4>
+</div>
+
+<!-- Modal Body -->
+<div class="modal-body">
+
+
+    <div class="form-group">
+        <label for="firstdate">Date Aquired Learner Permit / Last Log Entry Date</label>
+        <input type="date" class="form-control" name="firstdate" min="2007-01-01" max="2050-12-31" id="firstdate" ng-model="user.startdate"  required/>
+    </div>
+
+    <label for="totaldrivetime">Total 'All Driving' Time</label>
+    <div class="entry input-group form-group">
+    <div class="form-inline" style="margin-bottom: 10px;">
+        
+        <input type="number" class="form-control" name="totaldrivetimeHrs"  min="0" max="200" style="width: 70px;" placeholder="Hrs" ng-model="user.alldrivehrs" required/>
+      
+        <input type="number" class="form-control" max="59"  min="0" maxlength="2" style="width: 70px;" placeholder="Mins" ng-model="user.alldrivemins" required/>
+    </div>
+    </div>
+
+    <label for="totalnightdrivetime">Total 'Night Driving' Time</label>
+    <div class="entry input-group form-group"   >
+    <div class="form-inline" style="margin-bottom: 15px;">
+        <input type="number" class="form-control" name="totalnightdrivetimeHrs" id="totalnightdrivetimeHrs" min="0" max="200" style="width: 70px;" placeholder="Hrs" ng-model="user.nightdrivehrs" required/>
+        <input type="number" class="form-control" id="totalnightdrivetimeMins" max="59"  min="0" maxlength="2" style="width: 70px;" placeholder="Mins" ng-model="user.nightdrivemins" required />
+    </div>
+    </div>
+
+     <label for="">Cars used</label>
+    <div class="dyn" ng-repeat="car in CarCount track by $index">
+        <div class="entry input-group form-group"   >
+        <div class="form-inline" >
+            <input class="form-control" name="user.car[$index + 1].rego"  style="width: 50%;" type="text" placeholder="Rego" min-length="2" ng-model="user.car[$index + 1].rego" required/>
+            <input class="form-control" name="user.car[$index + 1].odometer" style="width: 50%;" type="number" max="2000000" min="0" placeholder="Odometer" ng-model="user.car[$index + 1].odometer" required/>
+        </div>
+           
+            <span class="input-group-btn">
+                <button class="btn btn-danger btn-remove" type="button" ng-click="removeField($index, false); reorderRemove($index, false);">
+                    <span class="glyphicon glyphicon-minus"></span>
+                </button>
+            </span>
+        </div>
+    </div>
+
+    <div class="entry input-group form-group" >
+        <div class="form-inline">
+            <input class="form-control" name="user.car['0'].rego" type="text" style="width: 50%;" value="helloworld" placeholder="Rego" min-length="2" ng-model="user.car['0'].rego" required/>
+            <input class="form-control" name="user.car['0'].odometer" type="number" style="width: 50%;" max="2000000" min="0" placeholder="Odometer" ng-model="user.car['0'].odometer" required />
+        </div>
+           
+            <span class="input-group-btn">
+                <button class="btn btn-success btn-add" type="button" ng-click="AddOrRemoveField(0)">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </button>
+            </span>
+        </div>
+
+<!-- <pre>user = {{user | json}}</pre>
+<pre>master = {{master | json}}</pre>
+<pre>gloabl = {{hasmoved | json}}</pre>
+
+
+<button type="button" class="btn btn-default" ng-click="update(user)">Submit</button>
+ -->
+</div>
+
+
+
+
+<!-- Modal Footer -->
+<div class="modal-footer">
+<!--   <button type="button" class="btn btn-default"
+  data-dismiss="modal">
+  Close
+</button> -->
+<input type="submit" class="btn mybtn-primary" ng-click="submitForm()" data-toggle="{{showmodal}}" data-target="#myModal"/>
+
+</div>
+
+</div>
+</div>
+</form>
+</div>

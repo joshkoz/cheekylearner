@@ -1,0 +1,36 @@
+
+nav {
+	margin: 0;
+	padding: 0;
+	background-color: #424242;
+	text-align: center;
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+}
+
+nav li {
+	display: inline;
+	margin: 0;
+	padding: 0;
+}
+
+nav li a {
+	display: inline-block;
+	color: white;
+	padding: 10px;
+	width: 180px;
+	text-decoration: none;
+}
+
+nav li a:hover {
+	color: #48484A;
+	background-color: white;
+	text-decoration: none;
+}
+
+nav .selected {
+	color:orange !important;
+}
