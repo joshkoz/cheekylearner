@@ -59,7 +59,7 @@ border-width: 1;
 
 #content{
 	background:
-	url('./images/background.jpg') 100% 100% / cover no-repeat;
+	url('../images/background.jpg') 100% 100% / cover no-repeat;
 	
 
     width: 100%;
