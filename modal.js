@@ -1,5 +1,5 @@
 (function(){
-	var app = angular.module('modal',["ui.bootstrap", "gen"]);
+	var app = angular.module('modal',["ui.bootstrap"]);
 
 	app.directive('modal', function () {
 	    return {

@@ -2,32 +2,47 @@
 <!DOCTYPE html>
 <html ng-app="gen">
 <head>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/logbook.css?random=1111111addedanalyticsm811111111111115">
-	<link rel="stylesheet" type="text/css" href="css/nav.css?random=8736">
+<script>document.write('<script src="http://' + (location.host || 'localhost')
+.split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+	<!--Change to standard css in production-->
+	<script>
+		document.write('<link href="css/logbook.css?r='+ (new Date()).getTime() +'" rel="stylesheet" type="text/css" />');
+	</script>
+	<!-- <link rel="stylesheet" type="text/css" href="css/logbook.css?random=1111111addedanalyticsm8111111111111115">
+ -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>-->
+	<script type="text/javascript"  src="angular.js"></script>
 
-	<script type="text/javascript" src="jquery-1.11.3.min.js"></script>
-	<script type="text/javascript" src="angular.js"></script>
-	<script type="text/javascript" src="js/bootstrap.js"></script>
-
-	<script src="js/ui-bootstrap-tpls-0.14.3.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.14.3/ui-bootstrap-tpls.min.js"></script>
 	
-	<script type="text/javascript" src="modal.js?random=455115111"></script>
+	
 
-	<script type="text/javascript" src="tabs.js?random=11111111111111111111111111111111111111111111132"></script>
+	
+	<script type="text/javascript" src="leftpage.js?v=67857567"></script>	
 
-	<script type="text/javascript" src="rightpage.js?random=811111111111111111111111711112"></script>		
-	<script type="text/javascript" src="leftpage.js?random=811117111111111111132"></script>
-	<script type="text/javascript" src="app.js?random=78311111111111111111112111111114"></script>
+ 	<script type="text/javascript" src="tabs.js?v=345345345"></script>
+	<script type="text/javascript" src="modal.js?v=345345345"></script>
+ 	
+	<script type="text/javascript" src="app.js?v=45645"></script>
+ 
 
+	<script type="text/javascript" src="rightpage.js?v=345345"</script>		
+	
+	
+	
 	<title>Logbook Generator</title>
 </head>
 <body ng-controller="TableController as table" >
+
 	<modal></modal>
 	<!-- <div id="sticky_wrapper"> -->
 	<main id="content"  ng-hide="showall" >
 		<div ng-show="init=true" class="introCard" >	
-			<!-- Button trigger modal -->
+			<!-- Button trigger modal -->	
 			<div class="launchbuttondiv">
 				<h1 class="intro" >Welcome to your logbook generator!</h1><br>
 				<h5 class="intromessage">
