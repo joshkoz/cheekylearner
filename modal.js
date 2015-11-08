@@ -16,23 +16,22 @@
 				$scope.hasmoved = {};
 				$scope.submitted = false;
 				$scope.showmodal = "true";
+				$scope.MasterDetails.Values = {};
 
 			      $scope.update = function(user) {
-			        $scope.master = angular.copy(user);
-			       
-					
-
-			        var date = new Date(formMasterDetails.startdate); // some mock date
-			        var milliseconds = date.getTime(); 
-					console.log(date);
-			      	console.log(milliseconds);
-			        $scope.master.milliseconds = milliseconds;
-			 		$scope.master.date = date;
-			        formMasterDetails = angular.copy($scope.master);
-
-			        $scope.hasmoved = formMasterDetails;
-
+			        	$scope.MasterDetails.Values = angular.copy(user);
 			      };
+			       $scope.debugfill = function(user) {
+			       		//$scope.master = angular.copy(user);
+			       		mainform.totaldrivetimeHrs.value = 62;
+			       		mainform.totaldrivetimeMins.value = 35;
+			       		mainform.totalnightdrivetimeHrs.value = 7;
+			       		mainform.totalnightdrivetimeMins.value = 25;
+			       		mainform.firstdate.value = "2015-04-19";
+
+			        	$scope.MasterDetails.Values = angular.copy($scope.master);
+			      };
+
 			      $scope.reset = function()
 			      {
 			      	
@@ -40,14 +39,11 @@
 
 			      $scope.submitForm = function(){
 			      	$scope.submitted = true;
-			      	$scope.master = angular.copy($scope.user);
-			      	formMasterDetails =  angular.copy($scope.master);
+			      	$scope.MasterDetails.Values =  angular.copy($scope.user);
 
 			      	if($scope.mainform.$valid === true){
 			      		$scope.showmodal = "modal"; //false on data toggle.
-			      	}
-			      	 $scope.hasmoved = formMasterDetails;
-			      	
+			      	}  	
 
 			      };
 

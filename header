@@ -1,0 +1,36 @@
+<!--now on production2-->
+<!DOCTYPE html>
+<html ng-app="gen">
+<head>
+<script>document.write('<script src="http://' + (location.host || 'localhost')
+.split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+	<!--Change to standard css in production-->
+	<script>
+		document.write('<link href="css/logbook.css?r='+ (new Date()).getTime() +'" rel="stylesheet" type="text/css" />');
+	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>-->
+	<script type="text/javascript"  src="angular.js"></script>
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.14.3/ui-bootstrap-tpls.min.js"></script>
+	
+	
+
+	
+	<script type="text/javascript" src="leftpage.js?v=67857567"></script>	
+
+ 	<script type="text/javascript" src="tabs.js?v=345345345"></script>
+	<script type="text/javascript" src="modal.js?v=345345345"></script>
+ 	
+	<script type="text/javascript" src="app.js?v=45645"></script>
+ 
+
+	<script type="text/javascript" src="rightpage.js?v=345345"</script>		
+	
+	
+	
+	<title>Logbook Generator</title>
+</head>
