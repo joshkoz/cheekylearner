@@ -7,10 +7,11 @@
 			restrict: 'E',
 			templateUrl: 'tabs.html',
 			controller: ['$scope', function($scope){
-				$scope.pageCount = 1;
-				$scope.entryCount = 0;
+				
 				$scope.EntryLeft = {};
 				$scope.EntryRight = {};
+
+				$scope.pageCount = 1;
 				$scope.showbutton = false;
 				$scope.showinstance = false;
 				$scope.instanceArr = [];
@@ -19,22 +20,22 @@
 				$scope.entrydata = [];
 				$scope.tab = 1;
 				
-				$scope.AllTime = {};
-				$scope.AllTime.hours = [];
-				$scope.AllTime.mins = [];
+				$scope.AllTime = {
+					'hours': [],
+					'mins': []
+				};
 
-				$scope.NightTime = {};
-				$scope.NightTime.hours = [];
-				$scope.NightTime.mins = [];
-
+				$scope.NightTime = {
+					'hours': [],
+					'mins': []
+				};
 
 				this.selectTab = function(setTab){
 					$scope.tab = setTab;
 					
 					if ($scope.instanceArr[$scope.tab] === true){
 						$scope.showinstance = true;
-						console.log($scope.instanceArr);
-					
+						console.log($scope.instanceArr);			
 					}
 					else
 					{
@@ -50,52 +51,43 @@
 				};
 
 				$scope.addPage = function(){
-					$scope.entryCount = 0;
 					$scope.pageCount++;
-					
 					$scope.showbutton = false;
-				};
 
+				};
+			
 				$scope.generatePage = function(){
 
-					var hrs = $scope.MasterDetails.Values.alldrivehrs;
-					var mins = $scope.MasterDetails.Values.alldrivemins;
-					var nmins = $scope.MasterDetails.Values.nightdrivemins;
-					var nhrs = $scope.MasterDetails.Values.nightdrivehrs;
-					$scope.globalformdata = $scope.MasterDetails.Values;
-					$scope.entrydata = $scope.generate.entries;
+					var InitalHours = $scope.MasterDetails.Values.alldrivehrs;
+					var InitalMins = $scope.MasterDetails.Values.alldrivemins;
+					var InitialNightMins = $scope.MasterDetails.Values.nightdrivemins;
+					var InitalNightHours = $scope.MasterDetails.Values.nightdrivehrs;
+				
+
 					if($scope.tab === 0)
 					{
-						$scope.AllTime.hours.push(hrs);
-						$scope.AllTime.mins.push(mins);
-						$scope.NightTime.hours.push(nhrs);
-						$scope.NightTime.mins.push(nmins);
+						$scope.AllTime.hours.push(InitalHours);
+						$scope.AllTime.mins.push(InitalMins);
+						$scope.NightTime.hours.push(InitalNightHours);
+						$scope.NightTime.mins.push(InitialNightMins);
+					}
+					else
+					{
+						$scope.NightTime.hours.push(InitalNightHours + $scope.generate.NightPageTotalHrs);
+						$scope.NightTime.mins.push(InitialNightMins + $scope.generate.PageTotalMins);
+						$scope.AllTime.hours.push(InitalHours + $scope.generate.PageTotalHrs);
+						$scope.AllTime.mins.push(InitalMins + $scope.generate.NightPageTotalMins);
 					}
 
-
-				//	console.log($scope.pageCount);
-					$scope.showbutton = true;
 					for(i = 0; i < 14; i++)
 					{
 						$scope.addSingleEntry();
 					}
 					$scope.showinstance = true;
-					//		console.log($scope.LeftPageEntries);
-					//console.log($scope.entryCount);
+					$scope.showbutton = true;
+					
 
-					var prvH = $scope.generate.PageTotalHrs; 
-					var prvM = $scope.generate.PageTotalMins;
-					var NprvH = $scope.generate.NightPageTotalHrs;
-					var NprvM = $scope.generate.NightPageTotalMins;
-
-					console.log($scope.generate);
-					console.log($scope.generate.randomValue);
-
-
-					$scope.NightTime.hours.push(nhrs + NprvH);
-					$scope.NightTime.mins.push(nmins + NprvM);
-					$scope.AllTime.hours.push(hrs + prvH);
-					$scope.AllTime.mins.push(mins + prvM);
+					
 					$scope.instanceArr.push(true);
 
 				};
@@ -103,7 +95,6 @@
 				$scope.addSingleEntry = function(){
 					$scope.EntryLeft.add();
 					$scope.EntryRight.add();
-					$scope.entryCount++;
 				};
 				$scope.getPageCount= function() {
 				    return new Array($scope.pageCount);   

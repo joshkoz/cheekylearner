@@ -8,7 +8,7 @@
 			<li ng-repeat="page in getPageCount() track by $index" ng-class="{active:tabs.isSelected($index)}"> <a href ng-click="tabs.selectTab($index)"> Page {{$index + 1}} </a> </li>
 			
 			<span class="addpage" >
-				<button class="btn"  style="margin-top: 3px;" ng-click="addPage(); tabs.selectTab(pageCount -1)" ng-show="showbutton">+</button>
+				<button class="btn"  style="margin-top: 3px;" ng-click="addPage(); tabs.selectTab(pageCount - 1);" ng-show="showbutton">+</button>
 			</span>
 
 		</ul>	

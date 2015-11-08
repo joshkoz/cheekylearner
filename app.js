@@ -1,13 +1,13 @@
 (function(){
-	var app = angular.module('gen', ["ui.bootstrap", 'leftpage', 'tabs','rightpage', 'modal', 'generate']);
+	var app = angular.module('gen', ["ui.bootstrap", 'leftpage', 'tabs','rightpage', 'modal', 'generate', 'carlist']);
 
 
-	app.controller('TableController', ['$scope', '$uibModal', function($scope, $uibModal){
+	app.controller('AppController', ['$scope', '$uibModal', function($scope, $uibModal){
 		
 		$scope.showall = false;	
 		$scope.generate = {};
 		$scope.MasterDetails = {};
-		
+
 		$scope.launched = function(){
 			$scope.showall = true;
 		};

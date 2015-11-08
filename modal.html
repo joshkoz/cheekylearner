@@ -3,7 +3,7 @@
 
 <!-- Modal -->
 
-<form name="mainform" ng-init="init()" ng-class="{submitted:submitted}" ng-submit="mainform.$valid && submitForm()" >
+<form name="mainform" ng-class="{submitted:submitted}" ng-submit="mainform.$valid && submitForm()" >
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 
  
@@ -48,42 +48,23 @@
             <input type="number" class="form-control" name="totalnightdrivetimeMins" max="59"  min="0" maxlength="2" style="width: 70px;" placeholder="Mins" ng-model="user.nightdrivemins" required />
         </div>
     </div>
-
-    <label for="">Cars used</label>
-    <div class="dyn" ng-repeat="car in CarCount track by $index">
-      <div class="entry input-group form-group"   >
-            <div class="form-inline" >
-                <input class="form-control" name="user.car[$index + 1].rego"  style="width: 50%;" type="text" placeholder="Rego" min-length="2" ng-model="user.car[$index + 1].rego" required/>
-                <input class="form-control" name="user.car[$index + 1].odometer" style="width: 50%;" type="number" max="2000000" min="0" placeholder="Odometer" ng-model="user.car[$index + 1].odometer" required/>
+    <div ng-controller="CarlistController as carlist">
+        <div class="entry input-group form-group" ng-repeat="car in CarCount.vals track by $index" ng-show="isVisible($index)" >
+            <div class="form-inline">
+                <input class="form-control" id="car_{{$index}}" type="text" style="width: 50%;" value="helloworld" placeholder="Rego" min-length="2" ng-model="CarCount.vals[$index].rego" required/>
+                <input class="form-control" name="user.car_{{$index}}.odometer" type="number" style="width: 50%;" max="2000000" min="0" placeholder="Odometer" ng-model="CarCount.vals[$index].odometer" required />
             </div>
 
             <span class="input-group-btn">
-                <button class="btn btn-danger btn-remove" type="button" ng-click="removeField($index, false); reorderRemove($index, false);">
-                    <span class="glyphicon glyphicon-minus"></span>
-                </button>
+                <button ng-class="{'btn btn-success btn-add': $last, 'btn btn-danger btn-remove' : !$last}" type="button" ng-click="$last ? addField($index) : removeField($index)">
+                  <span ng-class="{'glyphicon glyphicon-plus' : $last, 'glyphicon glyphicon-minus' : !$last}"></span>
+              </button>
             </span>
         </div>
-    </div>
-
-    <div class="entry input-group form-group" >
-        <div class="form-inline">
-            <input class="form-control" name="user.car['0'].rego" type="text" style="width: 50%;" value="helloworld" placeholder="Rego" min-length="2" ng-model="user.car['0'].rego" required/>
-            <input class="form-control" name="user.car['0'].odometer" type="number" style="width: 50%;" max="2000000" min="0" placeholder="Odometer" ng-model="user.car['0'].odometer" required />
-        </div>
-
-        <span class="input-group-btn">
-            <button class="btn btn-success btn-add" type="button" ng-click="AddOrRemoveField(0)">
-              <span class="glyphicon glyphicon-plus"></span>
-          </button>
-        </span>
-    </div>
-
-    <pre>user = {{user | json}}</pre>
-    <pre>MasterDetails = {{MasterDetails.Values | json}}</pre>
-
+        
+    </div>  
 
     <button type="button" class="btn btn-default" ng-click="update(user)">Submit</button>
-    <button type="button" class="btn btn-default" ng-click="debugfill(user)">Fill for debugging</button>
 
 
 </div>

@@ -28,7 +28,7 @@
 		$scope.generate.isFirstEntry = true;
 
 		$scope.generate.left = function(){
-			console.log($scope.MasterDetails.Values.Values);
+			console.log($scope.MasterDetails.Values);
 			$scope.dayOffset++;
 
 			millisecondOffset = $scope.dayOffset * 24 * 60 * 60 * 1000;
@@ -73,8 +73,8 @@
 
 
 			if($scope.generate.isFirstEntry === true){
-				newent.odStart = $scope.MasterDetails.Values.car["0"].odometer;
-				newent.odEnd = $scope.MasterDetails.Values.car["0"].odometer + ((TRIPTIME / 10 ) * 6);
+				newent.odStart = $scope.MasterDetails.Values.cars[0].odometer;
+				newent.odEnd = $scope.MasterDetails.Values.cars[0].odometer + ((TRIPTIME / 10 ) * 6);
 				$scope.generate.isFirstEntry = false;
 			}else
 			{
@@ -142,7 +142,7 @@
 
 		$scope.generate.right = function(){
 			var newent = {};
-			newent.rego = $scope.MasterDetails.Values.car["0"].rego;
+			newent.rego = $scope.MasterDetails.Values.cars[0].rego;
 			newent.parking = true;
 
 			newent.traffic = {

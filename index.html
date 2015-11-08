@@ -21,10 +21,13 @@
 			document.write('<script type="text/javascript" src="leftpage.js?v='+ (new Date()).getTime() +'"><\/script>');
 			document.write('<script type="text/javascript" src="app.js?v='+ (new Date()).getTime() +'"><\/script>');
 			document.write('<script type="text/javascript" src="generate.js?v='+ (new Date()).getTime() +'"><\/script>');
+			document.write('<script type="text/javascript" src="carlist.js?v='+ (new Date()).getTime() +'"><\/script>');
+
 		</script>
 		<title>Logbook Generator</title>
 	</head>
-	<body ng-controller="TableController as table" >
+	<body ng-controller="AppController as app" >
+		<pre>MasterDetails = {{MasterDetails.Values | json}}</pre>
 
 		<modal></modal>
 		<!-- <div id="sticky_wrapper"> -->
@@ -64,7 +67,6 @@
 			ga('create', 'UA-69806945-1', 'auto');
 			ga('send', 'pageview');
 		</script>
-		<pre>MasterDetails = {{MasterDetails.Values | json}}</pre>
 
 	</body>
 	</html>	

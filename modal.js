@@ -7,152 +7,25 @@
 	      restrict: 'E',
 	      scope: true,
 	      controller: ['$scope', function($scope){
-	      		
-
-	      		$scope.master = {};
-	      		$scope.odometers = [];
-	      		$scope.regos = [];
-				$scope.CarCount = [];
-				$scope.hasmoved = {};
+	      	
+				$scope.CarCount = {};
 				$scope.submitted = false;
 				$scope.showmodal = "true";
 				$scope.MasterDetails.Values = {};
 
-			      $scope.update = function(user) {
+			    $scope.update = function(user) {
 			        	$scope.MasterDetails.Values = angular.copy(user);
-			      };
-			       $scope.debugfill = function(user) {
-			       		//$scope.master = angular.copy(user);
-			       		mainform.totaldrivetimeHrs.value = 62;
-			       		mainform.totaldrivetimeMins.value = 35;
-			       		mainform.totalnightdrivetimeHrs.value = 7;
-			       		mainform.totalnightdrivetimeMins.value = 25;
-			       		mainform.firstdate.value = "2015-04-19";
+			        	$scope.CarCount.vals.splice(5,1);
+			     		$scope.MasterDetails.Values.cars = angular.copy($scope.CarCount.vals);
+			    };
 
-			        	$scope.MasterDetails.Values = angular.copy($scope.master);
-			      };
-
-			      $scope.reset = function()
-			      {
-			      	
-			      };
-
-			      $scope.submitForm = function(){
+			    $scope.submitForm = function(){
 			      	$scope.submitted = true;
 			      	$scope.MasterDetails.Values =  angular.copy($scope.user);
-
-			      	if($scope.mainform.$valid === true){
-			      		$scope.showmodal = "modal"; //false on data toggle.
-			      	}  	
-
-			      };
-
-			      $scope.init = function(){
-			   //    	$scope.user = {
-						//   "car": { "0": {"rego": "", odometer: 0}, "1": { "rego": "", odometer: 0}, "2": {"rego": "", odometer: 0},"3": {"rego": "", odometer: 0},"4": {"rego": "", odometer: 0} }
-						// };
-					};
-
-
-		      	$scope.reset();
-
-		      	
-
-		      	$scope.replacer = function(val){
-		      		
-		      		var controlForm = $('.modal form:first');
-				 	var currentEntry = $(this).parents('.entry:first');
-		      		if(val === "red"){
-
-			      		controlForm.find('.entry .btn-add')
-				      .removeClass('btn-add').addClass('btn-remove')
-				      .removeClass('btn-success').addClass('btn-danger')
-				      .html('<span class="glyphicon glyphicon-minus"></span>');
-		      		} else if (val === "green"){
-		      			controlForm.find('.entry:last .btn-remove')
-				      .removeClass('btn-remove').addClass('btn-add')
-				      .removeClass('btn-danger').addClass('btn-success')
-				      .html('<span class="glyphicon glyphicon-plus"></span>');
-		      		}
-	      			
-		      		
-		      	};
-
-		      	$scope.removeField = function(val, isZero){
-		      		
-		      		 $scope.CarCount.splice(val,1);	
-		      		 if(val === 0 && isZero === true) delete $scope.user.car[0];
-		      		if(val === 0 && isZero === false) delete $scope.user.car[1];
-		      		else
-		      			delete $scope.user.car[val + 2];					
-		      		 	$scope.replacer("green");
-		      	};
-
-		      	$scope.addField = function(){
-		      		$scope.CarCount.push(1);      				      			
-		      	};
-
-		      	$scope.reorderAdd = function(){
-		      		console.log($scope.CarCount);
-		      		$scope.user.car[$scope.CarCount.length].rego = $scope.user.car['0'].rego;
-		      		$scope.user.car[$scope.CarCount.length].odometer = $scope.user.car['0'].odometer;
-		      		$scope.user.car[0].rego = "";
-		      		$scope.user.car[0].odometer = "";
-
-		      	};
-
-		      	$scope.reorderRemove = function(val, isZero){
-		      		
-		    		if(val === 0 && isZero === true)
-		    		{
-		    			$scope.user.car[0].rego = $scope.user.car[4].rego;
-		    			$scope.user.car[4].rego = "";
-
-		    		}
-		    		else if (val === 0 && isZero === false)
-					{
-						for(i = 0; i < 4; i++){		    	
-			      			$scope.user.car[val + i].rego = $scope.user.car[val+ i + i].rego;
-			      			$scope.user.car[val + i].odometer = $scope.user.car[val+ i + 1].odometer;
-		      			}
-		      			$scope.user.car[0].rego = $scope.user.car[4].rego;
-		    			$scope.user.car[4].rego = "";
-					}
-		    		else
-		    		{	
-		    			
-		    			for(i = 0; i < 4; i++){		    	
-			      			$scope.user.car[val + i].rego = $scope.user.car[val+ i + i].rego;
-			      			$scope.user.car[val + i].odometer = $scope.user.car[val+ i + 1].odometer;
-		      			}
-		    		}
-		      	};
-
-		      
-
-		      	$scope.AddOrRemoveField = function(val){
-
-		      		if($scope.CarCount.length === 3){	     	
-		      			$scope.replacer("red");
-
-		      		}else{
-					     
-		      			$scope.replacer("green");
-		      		}
-
-		      		if($scope.CarCount.length < 4){
-		      			$scope.addField();
-		      			$scope.reorderAdd();
-
-		      		}
-		      		else{
-		      			$scope.removeField(val, true);
-		      			$scope.reorderRemove(val, true);
-		      		}	      		
-		      		
-		      	};
-
-
+			    	$scope.CarCount.vals.splice(5,1); // remove empty object from end of arryay.
+			     	$scope.MasterDetails.Values.cars = angular.copy($scope.CarCount.vals);
+			      	if ($scope.mainform.$valid === true) $scope.showmodal = "modal";  //false on data toggle
+			    };
 	      }],
 	      controllerAs: "modalForm"  
 	  	};
