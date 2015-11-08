@@ -13,9 +13,7 @@
 				$scope.EntryLeft.add = function() {
 
 					if(	$scope.LeftPageEntries.length < 14){
-						
 						var entry = $scope.generate.left();
-
 						$scope.LeftPageEntries.push(entry);
 					}							
 				};
