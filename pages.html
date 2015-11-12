@@ -1,13 +1,8 @@
 
-
-
-
-<div class="" style="padding: 20px; min-width: 1024px; overflow: auto; min-height:600px;	height: auto; ">
+<div style="padding: 20px; min-width: 1024px; overflow: auto; min-height:600px; height: auto; ">
 	<div class="generatePageBtn" >
 		<button class="btn mybtn-primary btn-lg"  ng-hide="showbutton" ng-click="generateInitalPage()" >Generate Page</button>
 	</div>
-
-	<!-- <pre>MasterDetails = {{MasterDetails.Values | json}}</pre> -->
 	<div style="margin-left: 10px;">
 		<ul class="nav mynav-pills" id="tabs" >
 			<li ng-repeat="page in pages track by $index" ng-class="{active:isSelected($index)}"> <a href ng-click="selectPage($index)"> Page {{$index + 1}} </a> </li>

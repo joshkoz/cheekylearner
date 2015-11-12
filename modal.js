@@ -13,12 +13,6 @@
 				$scope.showmodal = "true";
 				$scope.MasterDetails.Values = {};
 
-			    $scope.update = function(user) {
-			        	$scope.MasterDetails.Values = angular.copy(user);
-			        	$scope.CarCount.vals.splice(5,1);
-			     		$scope.MasterDetails.Values.cars = angular.copy($scope.CarCount.vals);
-			    };
-
 			    $scope.submitForm = function(){
 			      	$scope.submitted = true;
 			      	$scope.MasterDetails.Values =  angular.copy($scope.user);
@@ -49,7 +43,7 @@
 				$scope.CarCount.vals.push({'rego': "",'odometer': ""},{});
 			}
 			else if($scope.CarCount.vals.length > 4){
-
+				//Do nothing
 			}
 			else{
 				$scope.CarCount.vals.push({'rego': "",'odometer': ""});
@@ -70,5 +64,5 @@
 		};
 		
 	}]);
-	
+
 })();

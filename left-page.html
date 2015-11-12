@@ -29,12 +29,9 @@
 		<th id="smalltextblue"> h</th>
 		<td id="nor">{{LeftPageEntries[activePage][0].n_mins}}</td>
 		<th id="smalltextblue"> m</th>
-
 		<th id="whiteongreen">Start</th>
 		<th id="whiteongreen">Finish</th>
 	</tr>
-	
-
 	<tr ng-repeat="entry in LeftPageEntries[activePage] track by $index" class="entry" ng-hide="$first">
 		<td class="blue">{{entry.date | date}}</td>
 		<td class="green" >{{entry.starttime | date:'h:mm a'}}</td><!-- start trip timestamp -->

@@ -1,4 +1,3 @@
-<!--now on production2-->
 <!DOCTYPE html>
 <html ng-app="gen">
 <head>
@@ -19,18 +18,13 @@
 			document.write('<script type="text/javascript" src="pages.js?v='+ (new Date()).getTime() +'"><\/script>');
 			document.write('<script type="text/javascript" src="app.js?v='+ (new Date()).getTime() +'"><\/script>');
 			document.write('<script type="text/javascript" src="generate.js?v='+ (new Date()).getTime() +'"><\/script>');
-
 		</script>
 		<title>Logbook Generator</title>
-	</head>
+</head>
 	<body ng-controller="AppController as app" >
-	<!-- 	<pre>MasterDetails = {{MasterDetails.Values | json}}</pre>
- -->
 		<modal></modal>
-		<!-- <div id="sticky_wrapper"> -->
 		<main id="content"  ng-hide="showall" >
 			<div ng-show="init=true" class="introCard" >	
-				<!-- Button trigger modal -->	
 				<div class="launchbuttondiv">
 					<h1 class="intro" >Welcome to your logbook generator!</h1><br>
 					<h5 class="intromessage">
@@ -39,7 +33,6 @@
 					</h5>
 
 				</div>
-
 				<div class="headerDivider">
 					<button class="btn mybtn-primary btn-lg" id="launchBtn" data-toggle="modal" data-target="#myModal" ng-click="launched(); init=true" >Launch</button>
 				</div>
@@ -47,23 +40,9 @@
 					<img src="./images/justsep.png">
 				</div>
 			</div>
-
 		</main>
-
 		<div ng-show="showall" style="padding-left: 10%; padding-top: 1%; height: 110%;" ng-controller="GenerationController as generator">
 			<book-pages ></book-pages>
-
 		</div>
-
-		<script>
-			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-			ga('create', 'UA-69806945-1', 'auto');
-			ga('send', 'pageview');
-		</script>
-
 	</body>
-	</html>	
+</html>	
