@@ -10,7 +10,11 @@
 		// $scope.hours = $scope.minutes * 60;
 		// $scope.days = $scope.hours * 24;
 		// $scope.years = $scope.days * 365;
+	
 
+		$scope.generate.NightTime = {
+			
+		};
 		$scope.generate.randomValue = 0;
 		$scope.generate.nightDriving = false;
 		$scope.generate.PageTotalMinsUnadjusted = 0;
@@ -196,6 +200,41 @@
 			var NightRemainder = $scope.generate.NightPageTotalMinsUnadjusted % 60;
 			$scope.generate.NightPageTotalHrs = $scope.generate.NightPageTotalHrsUnadjusted + NightModMins;
 			$scope.generate.NightPageTotalMins = NightRemainder;
+
+		};
+
+
+		$scope.generate.TimeTotals = function(){
+
+			var PageTimeTotals = {
+				'hours': "",
+				'mins': "",
+				'n_hours': "",
+				'n_mins': ""
+			};
+
+			var InitalHours = $scope.MasterDetails.Values.alldrivehrs;
+			var InitalMins = $scope.MasterDetails.Values.alldrivemins;
+			var InitialNightMins = $scope.MasterDetails.Values.nightdrivemins;
+			var InitalNightHours = $scope.MasterDetails.Values.nightdrivehrs;
+				
+
+			if($scope.isFirstEntry === true)
+			{
+				PageTimeTotals.hours = InitalHours;
+				PageTimeTotals.mins = InitalMins;
+				PageTimeTotals.n_mins = InitialNightMins;
+				PageTimeTotals.n_hours = InitalNightHours;
+				
+			}
+			else
+			{
+				PageTimeTotals.hours = InitalHours + $scope.generate.PageTotalHrs;
+				PageTimeTotals.mins = InitalMins + $scope.generate.NightPageTotalMins
+				PageTimeTotals.n_mins = InitialNightMins + $scope.generate.PageTotalMins;
+				PageTimeTotals.n_hours = InitalNightHours + $scope.generate.NightPageTotalHrs;
+			}	
+			return PageTimeTotals;
 
 		};
 

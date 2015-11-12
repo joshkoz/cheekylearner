@@ -6,21 +6,15 @@
 		<th id="orangeonwhite" colspan="2" style="padding: 0; font-size: 90%;">Weather</th>
 		<th id="blueonwhite" colspan="7" style="padding: 0; font-size: 90%;">Road</th>
 		<th id="greenonwhite" colspan="3" style="padding: 0; font-size: 90%;">Light</th>
-
-
-
 	</tr>
 	<tr>
 		<th id="clear"></th>
-
 		<td id="whiteonblue" rowspan="2" class="rotate" ><div class="vertical-text" style="margin-bottom: -40px;">Parking</div></td>
 		<td id="whiteongreen" rowspan="2" class="rotate"><div class="vertical-text" style="margin-bottom: -40px;">Light</div></td>
 		<td id="whiteongreen" rowspan="2" class="rotate"><div class="vertical-text" style="margin-bottom: -47px;">Moderate</div></td>
 		<td id="whiteongreen" rowspan="2" class="rotate"><div class="vertical-text" style="margin-bottom: -28px;">Heavy</div></td>
 		<td id="whiteonorange" rowspan="2" class="rotate"><div class="vertical-text" style="margin-bottom: -18px;">Dry</div></td>
 		<td id="whiteonorange" rowspan="2" class="rotate"><div class="vertical-text" style="margin-bottom: -17px;">Wet</div></td>
-
-
 		<td id="whiteonblue" rowspan="2" class="rotate"><div class="vertical-text"  style="margin-bottom: -40px;">Local St</div></td>
 		<td id="whiteonblue" rowspan="2" class="rotate"><div class="vertical-text"  style="margin-bottom: -40px;">Main Rd</div></td>
 		<td id="whiteonblue" rowspan="2" class="rotate"><div class="vertical-text"  style="margin-bottom: -47px;">Inner City</div></td>
@@ -31,11 +25,6 @@
 		<td id="whiteongreen" rowspan="2" class="rotate"><div class="vertical-text" style="margin-bottom: -20px;">Day</div></td>
 		<td id="whiteongreen" rowspan="2" class="rotate"><div class="vertical-text" style="margin-bottom: -60px;">Dawn/Dusk</div></td>
 		<td id="whiteongreen" rowspan="2" class="rotate"><div class="vertical-text" style="margin-bottom: -20px;">Night</div></td>
-
-
-
-
-
 	</tr>
 	<tr>
 		<th id="clear"></th> 
@@ -63,7 +52,7 @@
 		<th id="whiteonorange">License No.</th>
 		<th id="whiteonorange">Signature</th>
 	</tr>
-	<tr ng-repeat="entry in RightPageEntries" class="entry">
+	<tr ng-repeat="entry in RightPageEntries[activePage]" class="entry">
 		<td class="orange">{{entry.rego}}</td>
 		<td class="blue" >{{entry.parking| true_false}}</td>
 		<td class="green" >{{entry.traffic.light| true_false}}</td>
@@ -82,10 +71,6 @@
 		<td class="green">{{entry.light.dawn| true_false}}</td>
 		<td class="green">{{entry.light.night | true_false}}</td>
 		<td class="orange"></td>
-		<td class="orange"></td>
-
-
-
-		
+		<td class="orange"></td>		
 	</tr>
 </table>

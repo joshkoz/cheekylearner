@@ -248,6 +248,15 @@ tr
 -webkit-box-shadow: 0 0 20px 3px #999;
 }
 
+#logPagePaper{
+	background-color:#FFF;
+ 	min-width: 1000px;
+  	margin-right: 10%;
+   	padding-top: 50px;
+	padding-bottom: 50px;
+
+}
+
 
 footer {
 	width: 100%;

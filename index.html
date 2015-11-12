@@ -9,26 +9,23 @@
 			document.write('<link href="css/logbook.css?r='+ (new Date()).getTime() +'" rel="stylesheet" type="text/css" />');
 		</script>
 
-		<script type="text/javascript" src="jquery-1.11.3.min.js"></script>
-		<script type="text/javascript" src="angular.js"></script>
+		<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="js/angular.js"></script>
 		<script type="text/javascript" src="js/bootstrap.js"></script>
 		<script type="text/javascript" src="js/ui-bootstrap-tpls-0.14.3.js"></script>
 
 		<script language="javascript" type="text/javascript">
 			document.write('<script type="text/javascript" src="modal.js?v='+ (new Date()).getTime() +'"><\/script>');
-			document.write('<script type="text/javascript" src="tabs.js?v='+ (new Date()).getTime() +'"><\/script>');
-			document.write('<script type="text/javascript" src="rightpage.js?v='+ (new Date()).getTime() +'"><\/script>');
-			document.write('<script type="text/javascript" src="leftpage.js?v='+ (new Date()).getTime() +'"><\/script>');
+			document.write('<script type="text/javascript" src="pages.js?v='+ (new Date()).getTime() +'"><\/script>');
 			document.write('<script type="text/javascript" src="app.js?v='+ (new Date()).getTime() +'"><\/script>');
 			document.write('<script type="text/javascript" src="generate.js?v='+ (new Date()).getTime() +'"><\/script>');
-			document.write('<script type="text/javascript" src="carlist.js?v='+ (new Date()).getTime() +'"><\/script>');
 
 		</script>
 		<title>Logbook Generator</title>
 	</head>
 	<body ng-controller="AppController as app" >
-		<pre>MasterDetails = {{MasterDetails.Values | json}}</pre>
-
+	<!-- 	<pre>MasterDetails = {{MasterDetails.Values | json}}</pre>
+ -->
 		<modal></modal>
 		<!-- <div id="sticky_wrapper"> -->
 		<main id="content"  ng-hide="showall" >
@@ -54,7 +51,7 @@
 		</main>
 
 		<div ng-show="showall" style="padding-left: 10%; padding-top: 1%; height: 110%;" ng-controller="GenerationController as generator">
-			<tabpages ></tabpages>
+			<book-pages ></book-pages>
 
 		</div>
 

@@ -1,5 +1,5 @@
 (function(){
-	var app = angular.module('gen', ["ui.bootstrap", 'leftpage', 'tabs','rightpage', 'modal', 'generate', 'carlist']);
+	var app = angular.module('gen', ["ui.bootstrap", 'pages', 'modal', 'generate']);
 
 
 	app.controller('AppController', ['$scope', '$uibModal', function($scope, $uibModal){
