@@ -14,9 +14,9 @@
 				$scope.MasterDetails.Values = {};
 
 			    $scope.submitForm = function(){
+			    	$scope.CarCount.vals.splice(5,1); // remove empty object from end of arryay.
 			      	$scope.submitted = true;
 			      	$scope.MasterDetails.Values =  angular.copy($scope.user);
-			    	$scope.CarCount.vals.splice(5,1); // remove empty object from end of arryay.
 			     	$scope.MasterDetails.Values.cars = angular.copy($scope.CarCount.vals);
 			      	if ($scope.mainform.$valid === true) $scope.showmodal = "modal";  //false on data toggle
 			    };

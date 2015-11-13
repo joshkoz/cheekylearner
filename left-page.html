@@ -20,22 +20,22 @@
 		<th id="whiteonblue">Date</th>
 		<th colspan="2" id="whiteongreen">Start - Finish</th>
 		<th id="smalltextorange"> Total Prev Page</th>
-		<td id="nor"> {{LeftPageEntries[activePage][0].hours}} </td>
+		<td id="nor"> {{LeftPageEntries[activePage][0].TimeTotals.hrs}} </td>
 		<th id="smalltextorange"> h</th>
-		<td id="nor"> {{LeftPageEntries[activePage][0].mins}} </td>
+		<td id="nor"> {{LeftPageEntries[activePage][0].TimeTotals.mins}} </td>
 		<th id="smalltextorange"> m</th>
 		<th id="smalltextblue"> Total Prev Page</th>
-		<td id="nor"> {{LeftPageEntries[activePage][0].n_hours}}</td>
+		<td id="nor"> {{LeftPageEntries[activePage][0].TimeTotals.n_hrs}}</td>
 		<th id="smalltextblue"> h</th>
-		<td id="nor">{{LeftPageEntries[activePage][0].n_mins}}</td>
+		<td id="nor">{{LeftPageEntries[activePage][0].TimeTotals.n_mins}}</td>
 		<th id="smalltextblue"> m</th>
 		<th id="whiteongreen">Start</th>
 		<th id="whiteongreen">Finish</th>
 	</tr>
-	<tr ng-repeat="entry in LeftPageEntries[activePage] track by $index" class="entry" ng-hide="$first">
+	<tr ng-repeat="entry in LeftPageEntries[activePage] track by $index" class="entry">
 		<td class="blue">{{entry.date | date}}</td>
-		<td class="green" >{{entry.starttime | date:'h:mm a'}}</td><!-- start trip timestamp -->
-		<td class="green" >{{entry.endtime | date:'h:mm a'}}</td><!-- finish trip timestamp -->
+		<td class="green" >{{entry.starttime | date:'h:mm a' : 'UTC'}}</td><!-- start trip timestamp -->
+		<td class="green" >{{entry.endtime | date:'h:mm a' : 'UTC'}}</td><!-- finish trip timestamp -->
 		<td class="orange" >{{entry.triptime | date: "H'h' m 'm'" : 'UTC'}}</td><!-- travel time mins and hours -->
 		<td class="orange" colspan="4">{{entry.LineTotalhrs}}h {{entry.LineTotalmins}}m</td><!-- travel time total -->
 		<td class="blue">{{entry.nightDriving | date: "H'h' m 'm'" : 'UTC'}}</td><!-- night drving travel time -->

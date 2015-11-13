@@ -17,7 +17,7 @@
 			
 			
 				$scope.generateInitalPage = function(){
-
+					$scope.generate.init()
 					$scope.pages.push(true);
 					$scope.activePage = 0;	
 					$scope.showbutton = true;	
@@ -29,7 +29,6 @@
 					$scope.RightPageEntry = [];
 					$scope.LeftPageEntry = [];
 
-					$scope.LeftPageEntry.push($scope.generate.TimeTotals());
 					for(i = 0; i < val; i++)
 					{
 						$scope.LeftPageEntry.push($scope.generate.left());
