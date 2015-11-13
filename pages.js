@@ -78,11 +78,25 @@
 	app.filter('true_false', function() {
 		return function(text, length, end) {
 			if (text) {
-				return "T";
+				return "&#10004;";
 			}
 			return '';
 		}
 	});
+	app.filter('nohrs', function() {
+		return function(text, length, end) {
+			if (text == '0') {
+				return "";
+			}
+			else if (text === "--")
+				return "--";
+			else
+				return text + 'h';
+		}
+	});
+
+
+	app.filter('unsafe', function($sce) { return $sce.trustAsHtml; });
 
 })();
 

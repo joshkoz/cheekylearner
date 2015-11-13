@@ -3,45 +3,45 @@
 		<th id="clear"></th>
 		<th id="clear"></th>
 		<th id="clear"></th>
-		<th id="orangeonwhite"  colspan="4">All Driving</th>
-		<th id="blueonwhite" colspan="4">Night Driving Only</th>
+		<th id="orangeonwhite"  colspan="5">All Driving</th>
+		<th id="blueonwhite" colspan="5" style="text-align:center;">Night Driving Only</th>
 	</tr>
 	<tr>
 		<th id="clear"></th>
 		<th id="greenonwhite" colspan="2"> Time (am/pm)</th>
 		<th id= "whiteonorange">This Trip</th>
-		<th colspan="4" id= "whiteonorange">Total</th>
+		<th colspan="4" id= "whiteonorange" style="padding-left: 40px; padding-right: 40px;">Total</th>
 		<th id="whiteonblue">This Trip</th>
-		<th colspan="4" id="whiteonblue">Total</th>
+		<th colspan="4" id="whiteonblue" style="padding-left: 40px; padding-right: 40px;">Total</th>
 		<th id="greenonwhite" colspan="2">Odometer</th>
 
-	</tr>
+	</tr>	
 	<tr>
-		<th id="whiteonblue">Date</th>
-		<th colspan="2" id="whiteongreen">Start - Finish</th>
+		<th id="whiteonblue" style="padding-left: 40px; padding-right: 40px;">Date</th>
+		<th colspan="2" id="whiteongreen" style="padding-left: 40px; padding-right: 40px;">Start - Finish</th>
 		<th id="smalltextorange"> Total Prev Page</th>
-		<td id="nor"> {{LeftPageEntries[activePage][0].TimeTotals.hrs}} </td>
+		<td id="nor" style="text-align:right;"> {{LeftPageEntries[activePage][0].TimeTotals.hrs}} </td>
 		<th id="smalltextorange"> h</th>
-		<td id="nor"> {{LeftPageEntries[activePage][0].TimeTotals.mins}} </td>
+		<td id="nor" style="text-align:right;"> {{LeftPageEntries[activePage][0].TimeTotals.mins}} </td>
 		<th id="smalltextorange"> m</th>
 		<th id="smalltextblue"> Total Prev Page</th>
-		<td id="nor"> {{LeftPageEntries[activePage][0].TimeTotals.n_hrs}}</td>
+		<td id="nor" style="text-align:right;"> {{LeftPageEntries[activePage][0].TimeTotals.n_hrs}}</td>
 		<th id="smalltextblue"> h</th>
-		<td id="nor">{{LeftPageEntries[activePage][0].TimeTotals.n_mins}}</td>
+		<td id="nor" style="text-align:right;">{{LeftPageEntries[activePage][0].TimeTotals.n_mins}}</td>
 		<th id="smalltextblue"> m</th>
 		<th id="whiteongreen">Start</th>
 		<th id="whiteongreen">Finish</th>
 	</tr>
 	<tr ng-repeat="entry in LeftPageEntries[activePage] track by $index" class="entry">
 		<td class="blue">{{entry.date | date}}</td>
-		<td class="green" >{{entry.starttime | date:'h:mm a' : 'UTC'}}</td><!-- start trip timestamp -->
-		<td class="green" >{{entry.endtime | date:'h:mm a' : 'UTC'}}</td><!-- finish trip timestamp -->
-		<td class="orange" >{{entry.triptime | date: "H'h' m 'm'" : 'UTC'}}</td><!-- travel time mins and hours -->
-		<td class="orange" colspan="4">{{entry.LineTotalhrs}}h {{entry.LineTotalmins}}m</td><!-- travel time total -->
-		<td class="blue">{{entry.nightDriving | date: "H'h' m 'm'" : 'UTC'}}</td><!-- night drving travel time -->
-		<td class="blue" colspan="4">{{entry.NightLineTotalhrs}}h {{entry.NightLineTotalmins}}m</td><!-- night driving time total -->
-		<td class="green">{{entry.odStart}}</td><!-- odometer start -->
-		<td class="green">{{entry.odEnd}}</td><!-- odometer finish -->
+		<td class="green" >{{entry.starttime | date:'h:mm a' : 'UTC'}}</td>
+		<td class="green" >{{entry.endtime | date:'h:mm a' : 'UTC'}}</td>
+		<td class="orange" >{{entry.triptime | date: 'H' : 'UTC' | nohrs}} {{entry.triptime | date: "m'm'" : 'UTC' }}</td>
+		<td class="orange" colspan="4">{{entry.LineTotalhrs }}h {{entry.LineTotalmins}}m</td>
+		<td class="blue">{{entry.nightDriving | date: 'H' : 'UTC' | nohrs}} {{entry.nightDriving | date: "m'm'" : 'UTC' }}</td>
+		<td class="blue" colspan="4">{{entry.NightLineTotalhrs}}h {{entry.NightLineTotalmins}}m</td>
+		<td class="green">{{entry.odStart}}</td>
+		<td class="green">{{entry.odEnd}}</td>
 	</tr>
 </table>
 

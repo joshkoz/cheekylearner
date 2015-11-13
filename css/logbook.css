@@ -20,6 +20,9 @@ form.submitted .ng-invalid
 
 .pages{
 	 text-overflow: ellipsis;
+	 text-align: right;
+	 font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	 line-height: 1.7em;
 }
 #navlist li
 {
@@ -250,7 +253,7 @@ tr
 
 #logPagePaper{
 	background-color:#FFF;
- 	min-width: 1000px;
+ 	min-width: 1080px;
   	margin-right: 10%;
    	padding-top: 50px;
 	padding-bottom: 50px;
@@ -295,7 +298,6 @@ footer {
 	border-bottom: none;
 	border-top: none;
 	border-left: 1 solid white;
-	padding: 0;
 	text-align: center;
 }
 #whiteonblue{

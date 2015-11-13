@@ -54,23 +54,23 @@
 	</tr>
 	<tr ng-repeat="entry in RightPageEntries[activePage]" class="entry">
 		<td class="orange">{{entry.rego}}</td>
-		<td class="blue" >{{entry.parking| true_false}}</td>
-		<td class="green" >{{entry.traffic.light| true_false}}</td>
-		<td class="green" >{{entry.traffic.moderate| true_false}}</td>
-		<td class="green">{{entry.traffic.heavy | true_false}}</td>
-		<td class="orange">{{entry.weather.dry| true_false}}</td>
-		<td class="orange">{{entry.weather.wet| true_false}}</td>
-		<td class="blue">{{entry.road.local| true_false}}</td>
-		<td class="blue">{{entry.road.main| true_false}}</td>
-		<td class="blue">{{entry.road.heavy| true_false}}</td>
-		<td class="blue">{{entry.road.inner| true_false}}</td>
-		<td class="blue">{{entry.road.freeway| true_false}}</td>
-		<td class="blue">{{entry.road.rurulhwy| true_false}}</td>
-		<td class="blue">{{entry.road.rurulother| true_false}}</td>
-		<td class="green">{{entry.light.day| true_false}}</td>
-		<td class="green">{{entry.light.dawn| true_false}}</td>
-		<td class="green">{{entry.light.night | true_false}}</td>
-		<td class="orange"></td>
-		<td class="orange"></td>		
+		<td class="blue" ng-bind-html="entry.parking | true_false | unsafe"> </td>
+		<td class="green" ng-bind-html="entry.traffic.light| true_false | unsafe" >{{entry.traffic.light| true_false}}</td>
+		<td class="green" ng-bind-html="entry.traffic.moderate| true_false | unsafe"></td>
+		<td class="green" ng-bind-html="entry.traffic.heavy | true_false | unsafe"</td>
+		<td class="orange" ng-bind-html="entry.weather.dry| true_false | unsafe"</td>
+		<td class="orange" ng-bind-html="entry.weather.wet| true_false| unsafe"></td>
+		<td class="blue" ng-bind-html="entry.road.local| true_false| unsafe"></td>
+		<td class="blue" ng-bind-html="entry.road.main| true_false| unsafe"></td>
+		<td class="blue" ng-bind-html="entry.road.inner| true_false| unsafe"></td>
+		<td class="blue" ng-bind-html="entry.road.freeway | true_false| unsafe"></td>
+		<td class="blue" ng-bind-html="entry.road.rurulhwy| true_false| unsafe"></td>
+		<td class="blue" ng-bind-html="entry.road.rurulother| true_false| unsafe"></td>
+		<td class="blue" ng-bind-html="entry.road.gravel | true_false| unsafe"></td>
+		<td class="green" ng-bind-html="entry.light.day| true_false| unsafe"></td>
+		<td class="green" ng-bind-html="entry.light.dawn| true_false| unsafe"></td>
+		<td class="green" ng-bind-html="entry.light.night | true_false| unsafe"></td>
+		<td class="orange" ng-bind-html="" ></td>
+		<td class="orange" ng-bind-html="" ></td>		
 	</tr>
 </table>
