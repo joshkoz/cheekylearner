@@ -195,7 +195,13 @@
 					return $scope.CarValues[carNo];
 				},
 				tripDuration: function(){
-					return Math.floor((Math.random() * 10) + 1) * 10; // TODO: create a better trip duration calcualtion.
+					var HourTripProbability =  Math.floor((Math.random() * 3) + 1);
+
+					if(HourTripProbability < 3)
+						return Math.floor((Math.random() * 11) + 2) * 5; // 11 * 5. This randomizes betweeb 10 and 55 minutes
+					else
+						return Math.floor((Math.random() * 20) + 2) * 5; // 20 * 5. This randomizes betweeb 10 and 100 minutes
+							
 				},
 				traffic: function(){
 					var trafficProbability = Math.floor((Math.random() * 3) + 1);

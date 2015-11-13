@@ -36,10 +36,10 @@
 		<td class="blue">{{entry.date | date}}</td>
 		<td class="green" >{{entry.starttime | date:'h:mm a' : 'UTC'}}</td>
 		<td class="green" >{{entry.endtime | date:'h:mm a' : 'UTC'}}</td>
-		<td class="orange" >{{entry.triptime | date: 'H' : 'UTC' | nohrs}} {{entry.triptime | date: "m'm'" : 'UTC' }}</td>
-		<td class="orange" colspan="4">{{entry.LineTotalhrs }}h {{entry.LineTotalmins}}m</td>
-		<td class="blue">{{entry.nightDriving | date: 'H' : 'UTC' | nohrs}} {{entry.nightDriving | date: "m'm'" : 'UTC' }}</td>
-		<td class="blue" colspan="4">{{entry.NightLineTotalhrs}}h {{entry.NightLineTotalmins}}m</td>
+		<td class="orange" >{{entry.triptime | date: 'H' : 'UTC' | nohrs}}   {{entry.triptime | date: "m'm'" : 'UTC' }}</td>
+		<td class="orange" colspan="4">{{entry.LineTotalhrs }}h   {{entry.LineTotalmins}}m</td>
+		<td class="blue">{{entry.nightDriving | date: 'H' : 'UTC' | nohrs}}   {{entry.nightDriving | date: "m'm'" : 'UTC' }}</td>
+		<td class="blue" colspan="4">{{entry.NightLineTotalhrs}}h   {{entry.NightLineTotalmins}}m</td>
 		<td class="green">{{entry.odStart}}</td>
 		<td class="green">{{entry.odEnd}}</td>
 	</tr>
