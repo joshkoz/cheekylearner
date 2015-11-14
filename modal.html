@@ -28,13 +28,13 @@
 
 
     <div class="form-group">
-        <label for="firstdate">Date Aquired Learner Permit / Last Log Entry Date</label>
+        <label for="firstdate">Date Aquired Learner Permit or Last Log Entry Date</label>
         <input type="date" class="form-control" name="firstdate" min="2007-01-01" max="2050-12-31" ng-model="user.startdate"  required/>
     </div>
 
     
     <div class="entry input-group form-group">
-    <label>Total 'All Driving' Time</label>
+    <label>Total Driving Time Logged</label>
         <div class="form-inline" style="margin-bottom: 10px;">
             <input type="number" class="form-control" name="totaldrivetimeHrs"  min="0" max="200" style="width: 70px;" placeholder="Hrs" ng-model="user.alldrivehrs" required/>
             <input type="number" class="form-control"  name="totaldrivetimeMins" max="59"  min="0" maxlength="2" style="width: 70px;" placeholder="Mins" ng-model="user.alldrivemins" required/>
@@ -44,13 +44,14 @@
 
     
     <div class="entry input-group form-group"   >
-    <label>Total 'Night Driving' Time</label>
+    <label>Total 'Night Driving' Time Logged</label>
         <div class="form-inline" style="margin-bottom: 15px;">
             <input type="number" class="form-control" name="totalnightdrivetimeHrs" min="0" max="200" style="width: 70px;" placeholder="Hrs" ng-model="user.nightdrivehrs" required/>
             <input type="number" class="form-control" name="totalnightdrivetimeMins" max="59"  min="0" maxlength="2" style="width: 70px;" placeholder="Mins" ng-model="user.nightdrivemins" required />
         </div>
     </div>
     <div ng-controller="CarlistController as carlist">
+     <label>Cars</label>
         <div class="entry input-group form-group" ng-repeat="car in CarCount.vals track by $index" ng-show="isVisible($index)" >
             <div class="form-inline">
                 <input class="form-control" id="car_{{$index}}" type="text" style="width: 50%;" value="helloworld" placeholder="Rego" min-length="2" ng-model="CarCount.vals[$index].rego" required/>

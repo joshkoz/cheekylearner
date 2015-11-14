@@ -3,17 +3,17 @@
 <head>
 
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-		<link href="css/logbook.css?r=v1.0" rel="stylesheet" type="text/css"/>
+		<link href="css/logbook.css?r=v1.1" rel="stylesheet" type="text/css"/>
 
 		<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
 		<script type="text/javascript" src="js/angular.js"></script>
 		<script type="text/javascript" src="js/bootstrap.js"></script>
 		<script type="text/javascript" src="js/ui-bootstrap-tpls-0.14.3.js"></script>
 
-		<script type="text/javascript" src="modal.js?v=1.0"></script>
-		<script type="text/javascript" src="pages.js?v=1.0"></script>
-		<script type="text/javascript" src="app.js?v=1.0"></script>
-		<script type="text/javascript" src="generate.js?v=1.0"></script>
+		<script type="text/javascript" src="modal.js?v=1.1"></script>
+		<script type="text/javascript" src="pages.js?v=1.1"></script>
+		<script type="text/javascript" src="app.js?v=1.1"></script>
+		<script type="text/javascript" src="generate.js?v=1.1"></script>
 	
 		<title>Logbook Generator</title>
 </head>
@@ -28,21 +28,32 @@
 <body ng-controller="AppController as app" >
 	<modal></modal>
 	<main id="content"  ng-hide="showall" >
-		<div ng-show="init=true" class="introCard" >	
+		<div ng-show="init=true" class="introCard">	
 			<div class="launchbuttondiv">
-				<h1 class="intro" >Welcome to your logbook generator!</h1><br>
+				<img src="./images/favicon.ico">
+				<h1 class="intro" >Welcome to Cheeky Learner.<br> Your logbook generator!</h1><br>
 				<h5 class="intromessage">
-					Generate legitimate looking entries for your learners logbook - Save hours! 
+					Generate pseudorandom entries for the VicRoads learners logbook.<br>
 					Disclaimer: This generator is for demonstrative purposes only.  
 				</h5>
 
 			</div>
 			<div class="headerDivider">
-				<button class="btn mybtn-primary btn-lg" id="launchBtn" data-toggle="modal" data-target="#myModal" ng-click="launched(); init=true" >Launch</button>
+			
+				<button class="btn mybtn-primary btn-lg" style="margin-top: -40px" id="launchBtn" data-toggle="modal" data-target="#myModal" ng-click="launched(); init=true" >Launch</button>
+		
 			</div>
-			<div style="display:inline">
-				<img src="./images/justsep.png">
+			<div style="display:inline;">
+				<img style=" margin-top: 200px; " src="./images/justsep.png">
 			</div>
+		</div>
+		<div style="position:absolute; margin: 0 auto; bottom:0; right: 0; width:500px;">
+			<ul style="list-style: none; height: 10px; margin-top:40px;  margin-bottom:-45px; padding-bottom: -10px; postion:absolute; bottom: 0;">
+				<li class="navbar-text" style="color: white;"><p>&#169; 2015 Cheeky Learner </p></li>
+				<li class="navbar-text"><a href="https://github.com/joshkoz/cheekylearner">source</a></li>
+				<li class="navbar-text"><a href="https://github.com/joshkoz/cheekylearner/blob/master/README.md">about</a></li>
+				<li class="navbar-text"><a href="mailto:j.kozminska96@gmail.com">contact</a></li>	
+			</ul>
 		</div>
 	</main>
 
@@ -50,5 +61,4 @@
 		<book-pages ></book-pages>
 	</div>
 </body>
-
 </html>	
