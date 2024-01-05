@@ -10,6 +10,8 @@ Cheeky Learner was built for the purpose of learning JavaScript, the Angular.js 
 The current master branch of the applciation is hosted on an AWS server [here.](http://ec2-54-66-240-216.ap-southeast-2.compute.amazonaws.com/logGen "CheekyLearner Home Page")
 There you can demo an an extremely early and unfinished version of the application.
 
+#### Test it out
+Visit https://joshkoz.github.io/cheekylearner/ to demo the project
 
 #### How it works:
 Cheeky Learner works in three parts. Firstly, it prompts the user for some basic details, as seen in the image below.
