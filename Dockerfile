@@ -8,7 +8,7 @@ WORKDIR $APP_HOME
 
 COPY app.py .
 
-COPY ./public ./public
+COPY . ./public
 
 CMD exec gunicorn --bind :$PORT --access-logfile - --error-logfile - --log-level debug --workers 1 --threads 8 app:app
 
